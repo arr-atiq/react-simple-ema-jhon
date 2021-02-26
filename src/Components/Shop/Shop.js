@@ -6,9 +6,12 @@ import './Shop.css';
 const Shop = () => {
     const first10 = fakeData.slice(0,10);
     const [products, setProducts] = useState(first10);
+    const [cart , setCart] = useState([]);
 
     const handleAddProduct = (product) => {
         console.log('added:', product);
+        const newCart = [...cart, product]
+        setCart(newCart);
     }
     return (
         <div className="shop-container">
@@ -22,6 +25,7 @@ const Shop = () => {
             </div>
            <div className="cart-container">
                <h1>this is cart</h1>
+               <h5>Order Summary: {cart.length}</h5>
            </div>
         </div>
     );
