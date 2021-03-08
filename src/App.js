@@ -10,6 +10,7 @@ import {
 import Review from './Components/Review/Review';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
 import NotFound from './Components/NotFound/NotFound';
+import ProductDetail from './Components/ProductDetails/ProductDetail';
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
           </Route>
           <Route exact path="/">
             <Shop></Shop>
+          </Route>
+          <Route path="/product/:productKey">
+            <ProductDetail></ProductDetail>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
